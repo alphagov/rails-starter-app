@@ -1,5 +1,7 @@
 {
   "name": "verify-rails-template",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "govuk-frontend": "^2.11.0"
+  }
 }

@@ -1,0 +1,7 @@
+-   repo: local
+    hooks:
+    -   id: tests
+        name: tests
+        entry: ./pre-commit.sh
+        language: script
+        types: [ruby]

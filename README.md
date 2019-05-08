@@ -3,11 +3,20 @@ This is a Ruby on Rails template using the latest Gov design styles: https://des
 
 ## Setting up the app in development
 
-1. Run `bundle install` to install the gem dependencies
-2. Run `yarn` to install node dependencies
-4. Run `bundle exec rails server` to launch the app on http://localhost:3000
+```
+./build.sh  # create a Docker image
+./startup.sh  # run a local server on Docker
+```
+
+## Updating dependencies
+
+```
+rm Gemfile.lock  # and/or
+rm yarn.lock
+./build.sh
+```
 
 ## Running tests
 ```
-bundle exec rspec
+./pre-commit.sh
 ```

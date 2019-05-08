@@ -1,5 +1,8 @@
 #!/bin/bash
 set -eu
+THIS_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+THIS_DIR=`basename $THIS_PATH`
+DOCKER_IMAGE_NAME="${THIS_DIR}-dev"
 
 if ! command -v pre-commit 2>/dev/null; then
   echo "This repository has configuration for running pre-commit automatically"
@@ -13,6 +16,5 @@ else
   fi
 fi
 
-bundle check || bundle install
-
-bundle exec rake
+./build.sh
+docker run $DOCKER_IMAGE_NAME bin/rake

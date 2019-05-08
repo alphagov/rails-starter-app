@@ -1,7 +1,8 @@
 #!/bin/bash
+set -eu
 
-bundle check || bundle install
+THIS_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+THIS_DIR=`basename $THIS_PATH`
+DOCKER_IMAGE_NAME="${THIS_DIR}-dev"
 
-yarn check || yarn install
-
-bundle exec rails s
+docker run -it -p 3000:3000 --rm -v $THIS_PATH:/usr/src -w /usr/src $DOCKER_IMAGE_NAME rails s -b 0.0.0.0

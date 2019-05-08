@@ -1,4 +1,4 @@
-# Verify Rails Template
+# Rails Starter Template Application
 This is a Ruby on Rails template using the latest Gov design styles: https://design-system.service.gov.uk/get-started/
 
 ## Setting up the app in development

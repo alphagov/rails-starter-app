@@ -11,7 +11,7 @@ DOCKER_IMAGE_NAME="${THIS_DIR}-dev"
 touch $THIS_PATH/Gemfile.lock
 touch $THIS_PATH/yarn.lock
 
-docker build $THIS_PATH -t $DOCKER_IMAGE_NAME
+APP_IMAGE_NAME=$DOCKER_IMAGE_NAME docker-compose build
 
 for LOCK_FILE in 'yarn.lock' 'Gemfile.lock'; do
   docker run --rm --entrypoint cat $DOCKER_IMAGE_NAME:latest /tmp/$LOCK_FILE > /tmp/$LOCK_FILE

@@ -8,8 +8,8 @@ RUN apk add --update tzdata && \
     echo "Europe/London" > /etc/timezone
 
 # Install your app's runtime dependencies in the container
-ENV BUILD_PACKAGES="curl-dev ruby-dev build-base bash" \
-    DEV_PACKAGES="firefox-esr zlib-dev libxml2-dev libxslt-dev tzdata yaml-dev sqlite-dev postgresql-dev mysql-dev" \
+ENV BUILD_PACKAGES="postgresql-client curl-dev ruby-dev build-base bash" \
+    DEV_PACKAGES="firefox-esr zlib-dev libxml2-dev libxslt-dev tzdata yaml-dev postgresql-dev" \
     RUBY_PACKAGES="ruby-json yaml nodejs"
 
 # Update and install base packages and nokogiri gem that requires a

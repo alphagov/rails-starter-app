@@ -6,4 +6,4 @@ DOCKER_IMAGE_NAME="${THIS_DIR}-dev"
 
 ./build.sh
 
-docker run $DOCKER_IMAGE_NAME bin/rake
+APP_IMAGE_NAME=$DOCKER_IMAGE_NAME docker-compose run app bin/rake

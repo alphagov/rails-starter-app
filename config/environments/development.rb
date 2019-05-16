@@ -67,5 +67,4 @@ Rails.application.configure do
     BetterErrors::Middleware.allow_ip!(host_ip) if defined?(BetterErrors::Middleware)
     config.web_console.whitelisted_ips << host_ip
   end
-
 end

@@ -23,16 +23,14 @@ rm yarn.lock
 
 ## Running arbitrary commands with docker-compose
 
-The build script supplied here names the Docker image according to the current directory, to avoid any chance of confusion if you are creating multiple apps. You can change that, and simplify the examples below, by customising `docker-compose.yml`.
-
 ```
-APP_IMAGE_NAME=`basename $( pwd )`-dev docker-compose run app bin/rake db:reset
-APP_IMAGE_NAME=`basename $( pwd )`-dev docker-compose run app bin/rails dbconsole  # etc
+docker-compose run app bin/rake db:reset
+docker-compose run app bin/rails dbconsole  # etc
 ```
 
 To drop into a debugger if your `spec` tests fail, you can use:
 
 ```
-APP_IMAGE_NAME=`basename $( pwd )`-dev docker-compose run -e PRY_RESCUE_RAILS=true app bin/rake spec
+docker-compose run -e PRY_RESCUE_RAILS=true app bin/rake spec
 ```
 

@@ -45,6 +45,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'geckodriver-helper'
+  gem 'pry-rescue'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
 end

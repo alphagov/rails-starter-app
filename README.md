@@ -29,3 +29,10 @@ The build script supplied here names the Docker image according to the current d
 APP_IMAGE_NAME=`basename $( pwd )`-dev docker-compose run app bin/rake db:reset
 APP_IMAGE_NAME=`basename $( pwd )`-dev docker-compose run app bin/rails dbconsole  # etc
 ```
+
+To drop into a debugger if your `spec` tests fail, you can use:
+
+```
+APP_IMAGE_NAME=`basename $( pwd )`-dev docker-compose run -e PRY_RESCUE_RAILS=true app bin/rake spec
+```
+

@@ -1,4 +1,9 @@
 # Rails Starter Template Application
+
+>**GOV.UK Verify has closed**
+>
+>This repository is out of date and has been archived
+
 This is a Ruby on Rails template using GOV.UK Design System styles: https://design-system.service.gov.uk/get-started/
 
 ## Setting up the app in development
